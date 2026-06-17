@@ -1,0 +1,14 @@
+{
+  "name": "pyramid-principle-skill",
+  "version": "1.0.0",
+  "description": "Claude skill: write and review in the structure of Barbara Minto's Pyramid Principle (answer-first/BLUF, SCQA, MECE, action titles).",
+  "bin": {
+    "pyramid-principle-skill": "bin/install.js"
+  },
+  "files": [
+    "bin/install.js",
+    "SKILL.md"
+  ],
+  "keywords": ["claude", "claude-code", "skill", "pyramid-principle", "minto", "bluf", "scqa", "mece", "writing"],
+  "license": "MIT"
+}
