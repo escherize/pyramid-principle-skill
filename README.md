@@ -8,16 +8,28 @@ the conclusion.
 
 ## Install
 
-Into the current project (`./.claude/skills/`):
+Straight from GitHub (no npm publish needed):
 
 ```bash
-npx pyramid-principle-skill
+# into the current project (./.claude/skills/)
+npx github:escherize/pyramid-principle-skill
+
+# into all projects (~/.claude/skills/)
+npx github:escherize/pyramid-principle-skill --global
 ```
 
-Into all projects (`~/.claude/skills/`):
+Once published to npm, the shorter form works too:
 
 ```bash
-npx pyramid-principle-skill --global
+npx pyramid-principle-skill            # current project
+npx pyramid-principle-skill --global   # all projects
+```
+
+Or clone and run the installer directly:
+
+```bash
+git clone https://github.com/escherize/pyramid-principle-skill
+node pyramid-principle-skill/bin/install.js --global
 ```
 
 ## Use
