@@ -167,18 +167,3 @@ leads.)
 - **(LLM) Post-hoc rationalization** — emitting the conclusion as the first
   token, then back-filling justification for it. Avoid by reasoning in a
   scratchpad first (see enforcement rule 1).
-
-## Sources
-
-Minto, *The Minto Pyramid Principle* (1985/1987). Framework corroborated across
-McKinsey teaching materials, Wikipedia (MECE), and practitioner write-ups
-(strategyu.co, think-cell.com, thinkinsights.net, modelthinkers.com).
-
-LLM-enforcement rules grounded in: Anthropic prompt-engineering docs
-(positive framing, anti-preamble, structured outputs), the reasoning-first vs
-answer-first ordering result (dylancastillo.co; OpenAI structured-output docs),
-negation-unreliability research (NeQA inverse-scaling; "Pink Elephant"
-arXiv:2503.22395), and prompt-ordering effects ("A Taxonomy of Prompt Defects",
-arXiv:2509.14404). The reason-hidden-then-BLUF two-stage pattern reconciles the
-verified tension between BLUF (conclusion-first) and reasoning-first accuracy;
-note it is a synthesis of two verified findings, not a directly measured pattern.

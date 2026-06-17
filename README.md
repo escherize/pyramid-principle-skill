@@ -50,6 +50,20 @@ BLUF?", or just mention Minto / SCQA / MECE. The skill activates automatically.
 
 Derived from Minto, *The Minto Pyramid Principle* (1985/1987).
 
+## Provenance
+
+The framework rests on Minto's book, corroborated by McKinsey materials,
+Wikipedia (MECE), and practitioner write-ups (strategyu.co, think-cell.com,
+thinkinsights.net, modelthinkers.com).
+
+The LLM-enforcement rules are grounded in: Anthropic prompt-engineering docs
+(positive framing, anti-preamble, structured outputs), the reasoning-first vs
+answer-first ordering result (dylancastillo.co; OpenAI structured-output docs),
+negation-unreliability research (NeQA inverse-scaling; "Pink Elephant"
+arXiv:2503.22395), and prompt-ordering effects ("A Taxonomy of Prompt Defects",
+arXiv:2509.14404). The reason-hidden-then-BLUF two-stage pattern is a synthesis
+of two verified findings, not a directly measured pattern.
+
 ## License
 
 MIT
