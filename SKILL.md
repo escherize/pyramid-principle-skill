@@ -13,11 +13,11 @@ description: >-
 
 # Pyramid Principle
 
-Structure communication the way Barbara Minto taught at McKinsey: **reason
-bottom-up, communicate top-down.** Lead with the answer, then supporting
-arguments, then data — this is **BLUF (Bottom Line Up Front):** the conclusion
-comes first, not last. This skill applies it to writing AND uses it as a rule
-set to stop an LLM (you) from defaulting to context-first build-up.
+**Lead with the answer, then support it.** Reason bottom-up, present top-down —
+the conclusion comes first, never last (this is **BLUF: Bottom Line Up Front**).
+That is Barbara Minto's Pyramid Principle, taught at McKinsey. This skill applies
+it to writing AND uses it as a rule set to stop an LLM (you) from defaulting to
+context-first build-up.
 
 ## The one rule everything derives from
 
