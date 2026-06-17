@@ -35,7 +35,8 @@ Apply in this order. Do not skip to drafting.
    should walk away with. One sentence. If you can't state it in one sentence,
    you don't know it yet — keep reasoning bottom-up until you can.
 
-2. **Write the SCQA introduction.** Four ordered parts, each short:
+2. **Write the SCQA introduction.** SCQA = Situation, Complication, Question,
+   Answer — four ordered parts, each short:
    - **Situation** — context the reader already agrees with. *Remind, don't
      inform.* If they'd argue with it, it's not the Situation.
    - **Complication** — the problem, change, or tension that creates urgency.
@@ -165,6 +166,6 @@ leads.)
 - **Forcing MECE where redundancy is wanted.** MECE is a default, not a law —
   sometimes deliberate overlap/repetition serves the reader. Don't mangle a
   message to satisfy the acronym.
-- **(LLM) Post-hoc rationalization** — emitting the conclusion as the first
-  token, then back-filling justification for it. Avoid by reasoning in a
-  scratchpad first (see enforcement rule 1).
+- **(LLM) Post-hoc rationalization** — committing to a conclusion first, then
+  inventing reasons to justify it (instead of letting reasons lead to the
+  conclusion). Avoid by reasoning in a scratchpad first (see enforcement rule 1).
