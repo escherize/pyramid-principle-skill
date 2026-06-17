@@ -15,8 +15,9 @@ description: >-
 
 Structure communication the way Barbara Minto taught at McKinsey: **reason
 bottom-up, communicate top-down.** Lead with the answer, then supporting
-arguments, then data. This skill applies it to writing AND uses it as a rule set
-to stop an LLM (you) from defaulting to context-first build-up.
+arguments, then data — this is **BLUF (Bottom Line Up Front):** the conclusion
+comes first, not last. This skill applies it to writing AND uses it as a rule
+set to stop an LLM (you) from defaulting to context-first build-up.
 
 ## The one rule everything derives from
 
