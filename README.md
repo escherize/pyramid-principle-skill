@@ -8,24 +8,28 @@ the conclusion.
 
 ## Install
 
-Straight from GitHub (no npm publish needed):
+Use [`npx skills`](https://github.com/vercel-labs/skills) (the open agent-skills
+CLI). It fetches `SKILL.md` and drops it into `.claude/skills/` (or the right
+directory for whichever agent you use):
 
 ```bash
-# into the current project (./.claude/skills/)
-npx github:escherize/pyramid-principle-skill
+# into the current project
+npx skills add escherize/pyramid-principle-skill
 
-# into all projects (~/.claude/skills/)
-npx github:escherize/pyramid-principle-skill --global
+# into all projects (user-level)
+npx skills add escherize/pyramid-principle-skill --global
 ```
 
-Once published to npm, the shorter form works too:
+### Without the skills CLI
+
+Run this repo's own installer straight from GitHub:
 
 ```bash
-npx pyramid-principle-skill            # current project
-npx pyramid-principle-skill --global   # all projects
+npx github:escherize/pyramid-principle-skill            # current project
+npx github:escherize/pyramid-principle-skill --global   # all projects
 ```
 
-Or clone and run the installer directly:
+Or clone and run it directly:
 
 ```bash
 git clone https://github.com/escherize/pyramid-principle-skill
