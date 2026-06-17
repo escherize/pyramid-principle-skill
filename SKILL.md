@@ -82,18 +82,79 @@ argument from the first ~120 words (~30 seconds of reading). Concretely:
 
 If any box fails, restructure before shipping.
 
-## Using this to enforce pyramid output on yourself (LLM)
+## Enforcing pyramid output on yourself (LLM)
 
-You default to context-first: setup, then reasoning, then conclusion. That is
-the opposite of pyramid structure. To counteract it:
+You default to context-first: setup, reasoning, then conclusion. Pyramid is the
+reverse. The rules below are ordered by evidence strength and phrased the way
+research shows actually changes model behavior. Apply them at the TOP of the
+relevant instructions, not buried at the end — late instructions get dropped.
 
-1. **Reason in scratch, deliver in reverse.** Do the bottom-up thinking
-   internally. The user-facing output starts with the conclusion.
-2. **Emit the governing thought as literally the first sentence.** Not a
-   preamble, not "Let me explain." The answer.
-3. **Self-critique with the first-sentence test before sending.** Re-read your
-   draft's opening. If it doesn't carry the bottom line, rewrite the opening.
-4. **Headers are action titles.** Section headers state conclusions, not topics.
+### 1. Reason hidden, then deliver BLUF (the core move)
+
+Do NOT generate the conclusion as your very first token. Reasoning-first
+ordering measurably beats answer-first (controlled tests: ~47% vs ~33%
+accuracy); leading with the answer turns your reasoning into post-hoc
+rationalization, so you confidently defend a conclusion you committed to before
+thinking. Instead:
+
+1. Reason bottom-up in a scratchpad (a `<thinking>` block, a hidden reasoning
+   field, or internal reasoning the user won't see).
+2. THEN write the user-facing answer in BLUF order: governing thought first.
+
+The accuracy lives in the hidden reasoning; the pyramid structure lives in the
+final output. This two-stage split is what reconciles "lead with the answer"
+against "think before you commit."
+
+### 2. State rules positively, not as prohibitions
+
+Negative instructions ("don't start with background") are unreliable — models
+comprehend negation poorly and it does not improve with scale. Phrase every
+structural rule as an affirmative action:
+
+- Write: "Open with one sentence that states the recommendation and its main benefit."
+- Not: "Don't open with context or background."
+
+### 3. The one sanctioned prohibition: kill the preamble
+
+Anthropic's docs make anti-preamble the rare exception. Pair it with the
+positive rule above:
+
+> Respond directly. Do not open with "Here is…", "Based on…", "Let me…", or any
+> scaffolding. The first sentence is the governing thought.
+
+### 4. Use enumerated, countable structure (not abstract description)
+
+Explicit counts outperform "be MECE / be concise." Concretely:
+
+1. One-sentence **bottom line** (names the answer + its main consequence).
+2. **3 supporting arguments** (default; 3–5 is fine — not a hard law), each a
+   distinct dimension.
+3. Under each, **one evidence point** (a metric, fact, or proof).
+
+### 5. Make MECE happen by naming dimensions, not saying "MECE"
+
+Telling yourself "be MECE" rarely works. Instead pick distinct dimensions and
+check for near-synonyms. Example of the fix:
+
+- Overlapping (bad): "Strategically smart / Strengthens our position / Fits the vision" — three ways of saying one thing.
+- MECE (good): "Strategic fit / Financial return / Integration risk" — capability, value, execution.
+
+### 6. Action-title headers, verified by the read-titles test
+
+Every section header is one complete assertive sentence with a verb — a
+conclusion, not a topic. After drafting, read ONLY the headers top to bottom: if
+they form the whole argument, pass; if they read like a table of contents,
+rewrite them.
+
+- Topic label (bad): "Customer Survey Results"
+- Action title (good): "Customers will pay 20% more for faster delivery"
+
+### 7. Self-critique before sending (first-sentence test)
+
+Re-read your opening sentence in isolation. If a reader saw only it, would they
+have the bottom line? If not, rewrite the opening before sending. (This is a
+heuristic check, not a measured technique — but it's cheap and catches buried
+leads.)
 
 ## Failure modes (verified)
 
@@ -103,9 +164,21 @@ the opposite of pyramid structure. To counteract it:
 - **Forcing MECE where redundancy is wanted.** MECE is a default, not a law —
   sometimes deliberate overlap/repetition serves the reader. Don't mangle a
   message to satisfy the acronym.
+- **(LLM) Post-hoc rationalization** — emitting the conclusion as the first
+  token, then back-filling justification for it. Avoid by reasoning in a
+  scratchpad first (see enforcement rule 1).
 
 ## Sources
 
 Minto, *The Minto Pyramid Principle* (1985/1987). Framework corroborated across
 McKinsey teaching materials, Wikipedia (MECE), and practitioner write-ups
 (strategyu.co, think-cell.com, thinkinsights.net, modelthinkers.com).
+
+LLM-enforcement rules grounded in: Anthropic prompt-engineering docs
+(positive framing, anti-preamble, structured outputs), the reasoning-first vs
+answer-first ordering result (dylancastillo.co; OpenAI structured-output docs),
+negation-unreliability research (NeQA inverse-scaling; "Pink Elephant"
+arXiv:2503.22395), and prompt-ordering effects ("A Taxonomy of Prompt Defects",
+arXiv:2509.14404). The reason-hidden-then-BLUF two-stage pattern reconciles the
+verified tension between BLUF (conclusion-first) and reasoning-first accuracy;
+note it is a synthesis of two verified findings, not a directly measured pattern.
